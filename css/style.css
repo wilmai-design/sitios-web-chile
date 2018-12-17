@@ -301,6 +301,10 @@ body {
   opacity: 0.75;
 }
 
+.container-fluid.sticky-top {
+  background-color: #fff;
+}
+
 /*$mRegular: 'mullerregular';
 $mMedium: 'mullermedium';
 $mBlack: 'mullerblack';
