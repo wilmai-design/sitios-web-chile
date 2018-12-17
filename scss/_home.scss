@@ -1,0 +1,484 @@
+@import 'variables';
+
+.front {
+    h2.block-title {
+        color: $grey1;
+    }
+
+    .headerHome {
+        @include bgImg('../img/cohete-celular2.jpg', center, top -136px);
+        min-height: 510px;
+        height: 78vh;
+        display: -webkit-box;
+        display: -ms-flexbox;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        position: relative;
+
+        h1 {
+            color: $white;
+            margin: 0;
+            text-shadow: 1px 3px 4px #000;
+            text-align: center;
+            @include fSize(40);
+        }
+
+        p {
+            color: $white;
+            max-width: 60%;
+            margin: 20px auto;
+            text-shadow: 1px 3px 4px #000;
+            text-align: center;
+        }
+
+        a.btn-vermas {
+            position: absolute;
+            bottom: 8vh;
+            right: 8vw;
+            @include button(16, rgba($white, 0.2));
+            text-transform: uppercase;
+            color: $white;
+            border: 1px solid $white;
+            padding: 5px 35px;
+            font-family: $rbtBold;
+
+            &:hover {
+                background-color: $white;
+                color: $magenta;
+                border: 1px solid $white;
+            }
+        }
+
+        @include media(monitor) {
+            h1 {
+                @include fSize(50);
+            }
+        }
+    }
+
+    .region-content {
+        position: relative;
+
+        h2 {
+            position: absolute;
+            top: 96px;
+        }
+
+        @extend %filters;
+
+        .view-filters {
+            padding-top: 55px;
+            padding-bottom: 106px;
+
+            .views-exposed-widgets {
+                justify-content: center;
+            }
+        }
+
+        .link-buscador-charlas {
+            color: $grey1;
+
+            @include fSize(16);
+            @extend %next-after-pink;
+        }
+    }
+
+    .prox-eventos-home {
+        background-color: $magenta;
+        color: #fff;
+        min-height: 450px;
+        position: relative;
+        margin-top: 60px;
+
+        a {
+            color: #fff;
+        }
+
+        .cont-caja-prox-evento-home-img {
+
+            .cont-imagen-prox-evento-home-img {
+                position: absolute;
+                left: -22vw;
+                border-radius: 100%;
+                overflow: hidden;
+                z-index: 0;
+                top: -90px;
+                max-width: 640px;
+                max-height: 640px;
+                width: 52vw;
+
+                img {
+                    width: 100%;
+                }
+            }
+
+            >a {
+                position: absolute;
+                z-index: 2;
+                display: table;
+                //background-color: tomato;
+                left: 19%;
+                bottom: -380px;
+                text-shadow: 1px 3px 4px #000;
+
+                .cont-fecha-prox-evento-home-img {
+                    float: left;
+                    border: 1px solid #fff;
+                    width: 105px;
+                    height: 105px;
+                    text-align: center;
+                    margin-right: 20px;
+                    margin-bottom: 25px;
+                    @include bRadius(100%);
+
+                    .cont-fecha-prox-evento-dia-home-img {
+                        @include fSize(38);
+                        line-height: 69px;
+                    }
+
+                    .cont-fecha-prox-evento-mes-home-img {
+                        @include fSize(23);
+                        line-height: 0px;
+                        text-transform: uppercase;
+                    }
+                }
+
+                .titulo-prox-evento-home-img {
+                    @include fSize(38);
+                    font-family: $rbtBold;
+                    min-width: 284px;
+                    max-width: 474px;
+                    width: 50vw;
+                    line-height: 40px;
+                }
+
+                .expositor-prox-evento-home-img {
+                    @include fSize(19);
+                }
+
+                .ubicación-prox-evento-home-img {
+                    display: none;
+                }
+            }
+
+            @include media(monitor) {
+                .cont-imagen-prox-evento-home-img {
+                    left: -25vw;
+                }
+
+                >a {
+                    left: -15%;
+                }
+            }
+
+            @include media(tablet) {
+                height: 380px;
+
+                .cont-imagen-prox-evento-home-img {
+                    left: -18vw;
+                    position: relative;
+                    width: 60vw;
+                }
+
+                >a {
+                    bottom: unset;
+                    top: 172px;
+
+                    .titulo-prox-evento-home-img {
+                        width: 100%;
+                        max-width: 600px;
+                    }
+                }
+            }
+
+            @include media(mobile) {
+                height: 280px;
+
+                .cont-imagen-prox-evento-home-img {
+                    left: -115px;
+                    //width: 95vw;
+                    width: 356px;
+                }
+
+                >a {
+                    top: 132px;
+                    left: 0%;
+
+                    .cont-fecha-prox-evento-home-img {
+                        -moz-transform: scale(0.8);
+                        -webkit-transform: scale(0.8);
+                        -o-transform: scale(0.8);
+                        -ms-transform: scale(0.8);
+                        transform: scale(0.8);
+                        margin-right: 8px;
+
+                    }
+
+                    .titulo-prox-evento-home-img {
+                        @include fSize(23);
+                        line-height: normal;
+                        padding-top: 8px;
+                    }
+
+                }
+            }
+        }
+
+
+        .view-proximos-eventos {
+            padding: 0;
+            display: flex;
+            align-content: center;
+            //justify-content: center;
+            flex-flow: column;
+            flex-wrap: wrap;
+            position: relative;
+
+            >.view-content {
+                width: 100%;
+                margin: 0 auto;
+
+                >div:last-child {
+                    .cont-caja-prox-evento-home {
+                        border-bottom: 0px;
+                    }
+                }
+            }
+
+            .view-footer {
+                position: absolute;
+                bottom: -100px;
+                right: -17px;
+
+                a {
+                    color: $grey1;
+                    @include fSize(16);
+                    @extend %next-after-pink;
+                }
+            }
+
+            .cont-caja-prox-evento-home {
+                width: 100%;
+                border-bottom: 1px solid $white;
+                padding: 0px 50px;
+                padding-top: 40px;
+                padding-bottom: 15px;
+                display: flex;
+
+                .cont-fecha-prox-evento-home {
+                    width: 120px;
+                    margin-bottom: 42px;
+                    padding-top: 10px;
+
+                    .cont-fecha-prox-evento-dia-home {
+                    
+                        @include fSize(48);
+                        color: $white;
+                    }
+
+                    .cont-fecha-prox-evento-mes-home {
+                        @include fSize(26);
+                        color: $white;
+                        font-family: $rbtRegular;
+                        text-transform: uppercase;
+                    }
+
+                    .cont-fecha-prox-evento-mes-home,
+                    .cont-fecha-prox-evento-dia-home {
+                        line-height: 35px;
+                        display: table;
+                        margin: 0 auto;
+                    }
+                }
+
+                .cont-prox-evento-txt-home {
+                    max-width: 100%;
+                    min-height: 83px;
+
+                    .titulo-prox-evento-home {
+                        font-family: $rbtBold;
+                        color: $white;
+                        @include fSize(22);
+                        line-height: 24px;
+
+                        a {
+                            display: block;
+                        }
+                    }
+
+                    .expositor-prox-evento-home {
+                        font-family: $rbtRegular;
+                        color: $white;
+                        @include fSize(16);
+                    }
+
+                    .ubicación-prox-evento-home {
+                        @include fSize(12);
+                    }
+                }
+            }
+
+            @include media(tablet) {
+                >.view-content {
+                    width: 75%;
+                }
+                .view-footer {
+                    bottom: -70px;
+                }
+            }
+
+            @include media(mobile) {
+                >.view-content {
+                    width: 100%;
+                }
+
+                .cont-caja-prox-evento-home {
+                    padding: 0;
+                    padding-top: 25px;
+                    padding-bottom: 18px;
+
+                    .cont-fecha-prox-evento-home {
+                        width: 100px;
+                        min-width: 100px;
+
+                        .cont-fecha-prox-evento-dia-home {
+                            @include fSize(34);
+                        }
+
+                        .cont-fecha-prox-evento-mes-home {
+                            @include fSize(22);
+                        }
+                    }
+
+                    .cont-prox-evento-txt-home {
+                        .titulo-prox-evento-home {
+                            @include fSize(21);
+                        }
+
+                        .expositor-prox-evento-home {
+                            @include fSize(14);
+                        }
+                    }
+                }
+
+                .view-footer {
+                    right: 0;
+                }
+            }
+        }
+    }
+
+    .cont-charlas-noticias {
+        margin-top: 100px;
+        margin-bottom: 25px;
+        position: relative;
+
+        .views-bootstrap-grid-plugin-style {
+            overflow: hidden;
+        }
+
+        @extend %bloque-noticia;
+
+        @include media(mobile) {
+            margin-top: 70px;
+            margin-bottom: 55px;
+
+            .view-footer {
+                position: absolute;
+                right: 16px;
+            }
+        }
+    }
+
+    .view-footer {
+        float: right;
+        margin: 30px 16px 0 0;
+
+        a {
+            color: $grey1;
+            font-family: $rbtLigth;
+            @include fSize(16);
+            @extend %next-after-pink;
+        }
+    }
+
+    .slider-colaboradores {
+        margin-bottom: 25px;
+
+        .slick-slide {
+            max-width: 33%;
+            margin-left: .15%;
+            margin-right: .15%;
+
+            .img-responsive {
+                margin: 0 auto;
+            }
+        }
+    }
+}
+
+
+@include media(tablet) {
+    .front {
+        h2.block-title {
+            @include fSize(30);
+
+            padding: {
+                top: 35px;
+                right: 30px;
+                bottom: 30px;
+                left: 20px;
+            }
+
+            ;
+        }
+
+        .headerHome {
+            height: 62vh;
+            background-position: center top;
+        }
+
+        .prox-eventos-home {
+            margin-top: 90px;
+        }
+    }
+}
+
+@include media(mobile) {
+    .front {
+        .headerHome {
+            min-height: 450px;
+
+            h1 {
+                padding: 0 20px;
+                @include fSize(30);
+            }
+
+            p {
+                max-width: 85%;
+            }
+
+            a.btn-vermas {
+                right: 15%;
+                left: 15%;
+            }
+        }
+
+        .cont-caja-noticas {
+            max-width: 90%;
+        }
+
+        .region-content {
+            h2 {
+                top: 142px;
+            }
+
+            .view-filters {
+                padding-top: 35px;
+                padding-bottom: 46px;
+            }
+        }
+    }
+}

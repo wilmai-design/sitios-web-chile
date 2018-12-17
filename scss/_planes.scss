@@ -1,0 +1,38 @@
+@import 'variables';
+
+.carouselB {
+    text-align: center;
+    h3 {
+        font-family: $rbtRegular;
+        font-size: 20px;
+        color: $third;
+    }
+    picture {
+        img {
+            margin: 30px auto;
+        }
+    }
+    p {
+        display: -webkit-box;
+        -webkit-line-clamp: 3;
+        -webkit-box-orient: vertical;
+        text-overflow: ellipsis;
+        overflow: hidden;
+        font-size: 18px;
+        color: $grey1;
+        @include media(laptop) {
+            width: 72%;
+            margin: auto;
+            margin-bottom: 50px;
+        }
+    }
+    .btnPrimaryUI {
+        @extend %primaryUI;
+        margin: 20px auto;
+    }
+    .slick-dots {
+        @include media(laptop) {
+            padding: 0px;
+        }
+    }
+}

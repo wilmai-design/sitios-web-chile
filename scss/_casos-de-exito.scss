@@ -1,0 +1,53 @@
+@import 'variables';
+
+.containerCasos {
+    picture {
+        &:nth-child(1) {
+            &:before {
+                content: "";
+                width: 60%;
+                height: 6px;
+                background-color: $cyan;
+                position: absolute;
+                top: -6px;
+            }
+          }
+          img {
+            transition: .5s;
+            &:hover {
+                transform: scale(.97);
+            }
+          }
+    }
+    padding: 30px;
+    .titleA {
+        padding-left: 15px;
+        margin-bottom: 20px;
+        @include media(laptop){
+            width: 100%;
+            margin: 34px 0px 39px;
+        }
+    }
+    .boxDetailbrand {
+        background: $white;
+        margin: -30px auto 30px auto;
+        z-index: 3;
+        position: relative;
+        width: 90%;
+        padding: 15px;
+        text-align: center;
+        h3 {
+            font-family: $rbtRegular;
+            font-size: 20px;
+            color: $third;
+            margin: 15px auto;
+        }
+        .btnThirdUI {
+            @extend %thirdUI;
+            margin: 20px auto;
+        }
+    }
+    .botonViewMore {
+        width: 100%;
+    }
+}

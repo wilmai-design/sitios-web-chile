@@ -1,0 +1,98 @@
+@import 'variables';
+
+nav.bg-light {
+    background-color: $white !important;
+    transition: .5s;
+    .navbar-toggler {
+        color: transparent;
+        border-color: transparent;
+    }
+    ul.toolsMobile {
+        list-style: none;
+        width: 100%;
+        .form-control {
+            border: 1px solid $cyan;
+            border-radius: 2.25rem;
+            padding-left: 43px;
+        }
+        a {
+            color: $cyan;
+            i.fas.fa-phone {
+                margin-right: 15px;
+            }
+        }
+        form {
+            margin-top: -13px !important;
+        }
+        @include media(laptop) {
+            display: none;
+        }
+        i.fas.fa-search {
+            position: relative;
+            top: 18px;
+            left: 17px;
+            color: $cyan;
+        }
+    }
+    .toolsWide {
+        display: none;
+        @include media(laptop) {
+            display: inline-block;
+            .form-control {
+                border: 1px solid $cyan;
+                border-radius: 2.25rem;
+                padding-left: 43px;
+            }
+            a {
+                color: $cyan;
+                i.fas.fa-phone {
+                    margin-right: 15px;
+                    transition: .5s;
+                    &:hover {
+                        transform: scale(1.2);
+                    }
+                }
+            }
+            form {
+                margin-top: -13px !important;
+            }
+            i.fas.fa-search {
+                position: relative;
+                top: 2px;
+                left: 37px;
+                color: $cyan;
+            }
+        }
+    }
+    @include media(laptop) {
+        padding-bottom: 20px;
+        padding-top: 20px;
+    }
+
+    .navbar-nav {
+        @include media(laptop) {
+            margin-left: 5%;
+        }
+    }
+}
+
+nav.navbar.navbar-expand-lg.navbar-light.bg-light {
+    &:before {
+        content: '';
+        width: 70%;
+        height: 4px;
+        background-color: $cyan;
+        position: absolute;
+        left: 27%;
+        top: 0px;
+    }
+    @include media(mobile) {
+        &:before {
+            display: none;
+        }
+    }
+}
+
+.navbar-light .navbar-nav .nav-link {
+    transition: .5s;
+}

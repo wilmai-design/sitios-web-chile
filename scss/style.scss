@@ -1,0 +1,13 @@
+@import 'variables';
+@import 'fonts';
+@import 'mixins';
+@import 'general';
+@import 'nav';
+@import 'slide';
+@import 'planes';
+@import 'nuestro-equipo';
+@import 'casos-de-exito';
+@import 'contactanos';
+@import 'footer';
+
+//sass --watch sass:css --style compressed

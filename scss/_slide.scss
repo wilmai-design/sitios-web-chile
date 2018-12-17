@@ -1,0 +1,70 @@
+@import 'variables';
+
+.containerSlide{
+    .img-fluid2 {
+        max-width: inherit;
+        height: 180px;
+        margin-top: -19px;
+        @include media(laptop) {
+            width: 100%;
+            height: auto;
+        }
+    }
+    .box-slider {
+        background-color: $cyan;
+        padding: 30px;
+        color: $white;
+        h2 {
+            font-family: $rbtMedium;
+            font-size: 30px;
+            padding-top: 20px;
+            &:before {
+                content: "";
+                width: 38px;
+                height: 4px;
+                background-color: $white;
+                position: absolute;
+                top: 30px;
+            }
+        }
+        p {
+            font-weight: lighter;
+            display: -webkit-box;
+            -webkit-line-clamp: 2;
+            -webkit-box-orient: vertical;
+            text-overflow: ellipsis;
+            overflow: hidden;
+            @include media(laptop) {
+                -webkit-line-clamp: 4;
+            }
+        }
+        .btnSecondUI {
+            @extend %secondUI;
+        }
+        @include media(laptop) {
+            margin-top: -420px;
+            margin-right: 130px;
+        }
+        @include media(monitor){
+            margin-top: -590px;
+        }
+    }
+    .lineCyan {
+        @include media(laptop){
+            background-color: $cyan;
+            width: 100%;
+            height: 6px;
+            margin-top: -32px;
+        }
+    }
+    h3.titleA {
+        margin-top: 50px;
+    }
+    .botonViewMore {
+        margin: 50px 0px 40px 0px;
+    }
+    @include media(laptop) {
+        padding: 0px;
+    }
+}
+

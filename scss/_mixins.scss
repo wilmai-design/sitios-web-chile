@@ -1,0 +1,82 @@
+@import 'variables';
+
+@mixin media($querie) {
+  @if $querie==mobile {
+    @media only screen and (max-width: 767px) {
+      @content;
+    }
+  }
+
+  @else if $querie==tablet {
+    @media only screen and (max-width: 991px),
+      only screen and (min-width: 768px) and (max-width: 991px) {
+      @content;
+    }
+  }
+
+  @else if $querie==laptop {
+    @media only screen and (min-width: 993px) {
+      @content;
+    }
+  }
+
+  @else if $querie==monitor {
+    @media only screen and (min-width: 1400px) {
+      @content;
+    }
+  }
+}
+
+%primaryUI {
+    background-color: $cyan;
+    color: $white;
+    border: $cyan;
+    border-radius: 35px;
+    min-width: 148px;
+    height: 42px;
+    transition: .5s;
+    &:hover {
+      border: 1px solid $cyan;
+      background-color: transparent;
+      color: $cyan;
+    }
+    &:focus {
+      box-shadow: none;
+    }
+}
+
+%secondUI {
+  background-color: $white;
+  color: $second;
+  border: $cyan;
+  border-radius: 35px;
+  min-width: 148px;
+  height: 42px;
+  transition: .5s;
+  &:hover {
+    border: 1px solid $white;
+    background-color: transparent;
+    color: $white;
+  }
+  &:focus {
+    box-shadow: none;
+  }
+}
+
+%thirdUI {
+  background-color: $white;
+  color: $second;
+  border: 1px solid $cyan;
+  border-radius: 35px;
+  min-width: 148px;
+  height: 42px;
+  transition: .5s;
+  &:hover {
+    border: 1px solid $cyan;
+    background-color: $cyan;
+    color: $white;
+  }
+  &:focus {
+    box-shadow: none;
+  }
+}

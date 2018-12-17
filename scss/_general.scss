@@ -1,0 +1,153 @@
+@import 'variables';
+
+html {
+    font-size: #{$fontSizeG}px;
+}
+
+body {
+    font-family: $rbtRegular;
+    min-height: 100vh;
+}
+
+.titleA {
+    font-family: $rbtMedium;
+    font-size: 26px;
+    color: $wine;
+}
+
+.titleA.titleB {
+    margin-bottom: 30px;
+    margin-top: -11px;
+    padding-left: 30px;
+    @include media(laptop){
+        padding-left: 11%;
+    }    
+}
+
+.botonViewMore {
+    .btnPrimaryUI {
+        @extend %primaryUI;
+        margin: 20px auto;
+        width: 100%;
+    }
+    @include media(laptop) {
+        margin: -48px 0px 0px 75% !important;
+        width: 270px;
+    }
+}    
+
+.show > .dropdown-menu {
+    animation-name: slidenavAnimation;
+    animation-duration:.2s;
+    animation-iteration-count: 1;
+    animation-timing-function: ease;
+    animation-fill-mode: forwards;
+  
+    -webkit-animation-name: slidenavAnimation;
+    -webkit-animation-duration:.2s;
+    -webkit-animation-iteration-count: 1;
+    -webkit-animation-timing-function: ease;
+    -webkit-animation-fill-mode: forwards;
+  
+    -moz-animation-name: slidenavAnimation;
+    -moz-animation-duration:.2s;
+    -moz-animation-iteration-count: 1;
+    -moz-animation-timing-function: ease;
+    -moz-animation-fill-mode: forwards;
+  }
+  @keyframes slidenavAnimation {
+    from {
+      opacity: 0;
+    }
+    to {
+      opacity: 1;
+    }
+  }
+  @-webkit-keyframes slidenavAnimation {
+    from {
+      opacity: 0;
+    }
+    to {
+      opacity: 1;
+    }
+  }
+  
+  .go-top {
+    width: 48px;
+    height: 48px;
+    background-color: $fluor;
+    position: fixed;
+    right: 2rem;
+    bottom: 24rem;
+    text-align: center;
+    line-height: 48px;
+    color: $black;
+    cursor: pointer;
+    border-radius: 50%;
+    visibility: hidden;
+    opacity: 0;
+    transition: 0.4s;
+    z-index: 9;
+    font-size: 20px;
+    -webkit-box-shadow: 0px 5px 0px 0px $tierra;
+    -moz-box-shadow: 0px 5px 0px 0px $tierra;
+    box-shadow: 0px 5px 0px 0px $tierra;
+    @include media(laptop){
+        right: 11rem;
+        bottom: 7rem;
+        }
+    }
+
+    .go-top:hover {
+        opacity: .5;
+        transform: scale(.8);
+        background-color: $fluor;
+    }
+    .showGoTop .go-top {
+        visibility: visible;
+        opacity: 1;
+    }
+  
+    .slick-dots {
+        @include media(laptop) {
+            text-align: left;
+            padding: 0px 120px 0px;
+        }
+    }
+
+    .navbar-light .navbar-nav .active>.nav-link, .navbar-light .navbar-nav .nav-link.active, .navbar-light .navbar-nav .nav-link.show, .navbar-light .navbar-nav .show>.nav-link {
+        color: $cyan;
+        font-weight: 700;
+    }
+
+    .dropdown-item {
+        transition: .5s;
+        &:focus,
+        &:hover {
+            color: $white;
+        background-color: $cyan;
+        }
+    }
+
+    .slick-dots li button:before {
+        position: absolute;
+        top: 13px;
+        left: 0;
+        content: "•";
+        width: 20px;
+        height: 20px;
+        font-family: "slick";
+        font-size: 13px;
+        line-height: 20px;
+        text-align: center;
+        color: $cyan;
+        opacity: .3;
+        -webkit-font-smoothing: antialiased;
+        -moz-osx-font-smoothing: grayscale;
+    }
+
+    .slick-dots li.slick-active button:before {
+        color: $cyan;
+        opacity: 0.75;
+    }
+

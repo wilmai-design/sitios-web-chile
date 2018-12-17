@@ -1,0 +1,55 @@
+@import 'variables';
+
+.containerFull {
+    background-color: $cyan;
+    .box-slider2 {
+        background-color: $cyan;
+        padding: 50px 30px;
+        color: $white;
+        h2 {
+            font-family: $rbtMedium;
+            font-size: 30px;
+            padding-top: 20px;
+            &:before {
+                content: "";
+                width: 38px;
+                height: 4px;
+                background-color: $white;
+                position: absolute;
+                top: 50px;
+            }
+        }
+        p {
+            font-weight: lighter;
+            display: -webkit-box;
+            -webkit-line-clamp: 2;
+            -webkit-box-orient: vertical;
+            text-overflow: ellipsis;
+            overflow: hidden;
+             @include media(laptop){
+                -webkit-line-clamp: 5;
+             }
+        }
+        .btnSecondUI {
+            @extend %secondUI;
+            @include media(laptop){
+                margin-top: 40px;
+            }
+        }
+    }
+    picture {
+        img {
+            margin-bottom: 40px;
+        }
+    }
+    @include media(laptop) {
+        margin-top: 30px;
+    }
+    .imgAside {
+        @include media(laptop) {
+            position: absolute;
+            right: 0%;
+            padding-right: 0px;
+        }
+    }
+}
