@@ -3,6 +3,26 @@
 nav.bg-light {
     background-color: $white !important;
     transition: .5s;
+    a.navbar-brand {
+        width: 72%;
+        margin-right: 0px !important;
+        img {
+            width: 200px;
+            height: 73px;
+            @include media(laptop) {
+                width: auto;
+                margin-right: 20px;
+            }
+        }
+        @include media(laptop) {
+            width: auto;
+            margin-right: 0px;
+        }
+        @include media(monitor) {
+            width: auto;
+            margin-right: 0px;
+        }
+    }
     .navbar-toggler {
         color: transparent;
         border-color: transparent;
